@@ -38,13 +38,13 @@
 import pygame
 import sys
 from settings import *
+from Sprites import Block
 
-# Pygame setup
+# Pygame setup / variables
 pygame.int()
-screen_width = 1200
-screen_height = 700
 screen = pygame.display.set_mode((screen_width,screen_height))
 clock = pygame.time.Clock()
+test_block = pygame.sprite.Group(Tile((100, 100), 200))
 
 while True:
     for event in pygame.event.get():
