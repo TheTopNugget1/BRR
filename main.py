@@ -1,9 +1,14 @@
-# https://www.youtube.com/watch?v=YWN8GcmJ-jA
 
-# Brief
+# Reference section ----------------------------------------------------------------------------------------------------
+
+# These are the sites I used to help me get a handel on Python and Pycharm
+# https://www.youtube.com/watch?v=YWN8GcmJ-jA - for learning how to use pygame
+# https://www.youtube.com/watch?v=mDKM-JtUhhc - for learning the best ways to use python
+
+# Brief section --------------------------------------------------------------------------------------------------------
 
 # I am going to make a platform shooter game called Brr, in python.
-# Brr is a visual 2d platformer with added combat as a side thingy, I am going to be making this in pygame.
+# BRR is a visual 2d platformer with added combat as a side thingy, I am going to be making this in pygame.
 
 # The premise of the game is that you are a prisoner of war and are imprisoned on an enemy warship,
 # Your goal is to escape on an escape pod.
@@ -34,25 +39,30 @@
 #  •	Game menu.
 #  •	Character select.
 
-# Imports
+# Imports section ------------------------------------------------------------------------------------------------------
+
+# Imports for pygame
 import pygame
 import sys
 from settings import *
-from Sprites import Block
+from sprites import Tile
+
+# Code section ---------------------------------------------------------------------------------------------------------
 
 # Pygame setup / variables
-pygame.int()
-screen = pygame.display.set_mode((screen_width,screen_height))
+pygame.init()
+screen = pygame.display.set_mode((screen_width, screen_height))
 clock = pygame.time.Clock()
-test_block = pygame.sprite.Group(Tile((100, 100), 200))
+test_tile = pygame.sprite.Group(Tile((100, 100), 200))
 
 while True:
     for event in pygame.event.get():
-        if event.type == pygame.Quit:
+        if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
 
-    screen.fill('black')
+    screen.fill((255, 0, 0))
+    test_tile.draw(screen)
 
     pygame.display.update()
     clock.tick(60)
